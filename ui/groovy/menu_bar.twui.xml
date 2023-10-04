@@ -1,0 +1,165 @@
+<!-- Empty TWUI file for quick copy-pasta -->
+<?xml version="1.0"?>
+<layout
+	version="137"
+	comment=""
+	precache_condition="">
+	<hierarchy>
+		<root this="28F71074-A77C-2048-24F3704948FDB444">
+			<menu_bar this="EDC5743D-5092-0278-89CAA1CC27FC8EFE">
+				<buttongroup this="C3F7F67A-CA89-CB12-E08EDCDA8AA989BE"/>
+            </menu_bar>
+		</root>
+	</hierarchy>
+	<components>
+		<root
+			this="28F71074-A77C-2048-24F3704948FDB444"
+			id="root"
+			tooltipslocalised="true"
+			uniqueguid="28F71074-A77C-2048-24F3704948FDB444"
+			currentstate="5BFA3CDC-ECBC-FFDB-FACAEDD16084944A"
+			defaultstate="5BFA3CDC-ECBC-FFDB-FACAEDD16084944A">
+			<componentimages>
+				<component_image
+					this="0C4CEEF3-F1D2-B1F0-6FF9DCD228C2F02F"
+					uniqueguid="0C4CEEF3-F1D2-B1F0-6FF9DCD228C2F02F"/>
+			</componentimages>
+			<states>
+				<newstate
+					this="5BFA3CDC-ECBC-FFDB-FACAEDD16084944A"
+					name="NewState"
+					width="1600"
+					height="900"
+					texthbehaviour="Never split"
+					interactive="true"
+					uniqueguid="5BFA3CDC-ECBC-FFDB-FACAEDD16084944A">
+					<imagemetrics>
+						<image
+							this="B63A3771-920B-125B-27EFD355C7F18473"
+							uniqueguid="B63A3771-920B-125B-27EFD355C7F18473"
+							componentimage="0C4CEEF3-F1D2-B1F0-6FF9DCD228C2F02F"
+							width="1600"
+							height="900"
+							colour="#F0F0F0FF"/>
+					</imagemetrics>
+				</newstate>
+			</states>
+		</root>
+		<menu_bar
+			this="EDC5743D-5092-0278-89CAA1CC27FC8EFE"
+			id="menu_bar"
+			allowhorizontalresize="false"
+			allowverticalresize="false"
+			docking="Top Left"
+			priority="20"
+			tooltipslocalised="true"
+			uniqueguid="EDC5743D-5092-0278-89CAA1CC27FC8EFE"
+			updatewhennotvisible="true"
+			currentstate="F59AA589-3BE8-CBC0-851FA6311D85EBA4"
+			defaultstate="F59AA589-3BE8-CBC0-851FA6311D85EBA4">
+			<callbackwithcontextlist>
+				<callback_with_context callback_id=""/>
+			</callbackwithcontextlist>
+			<states>
+				<newstate
+					this="F59AA589-3BE8-CBC0-851FA6311D85EBA4"
+					name="NewState"
+					width="230"
+					height="45"
+					interactive="true"
+					uniqueguid="F59AA589-3BE8-CBC0-851FA6311D85EBA4"/>
+			</states>
+			<animations>
+				<show id="show">
+					<frames>
+						<frame
+							interpolationtime="0"
+							interpolationpropertymask="2"
+							targetmetrics_m_height="60"
+							targetmetrics_m_width="362"/>
+						<frame
+							interpolationtime="300"
+							interpolationpropertymask="2"
+							targetmetrics_m_height="60"
+							targetmetrics_m_width="362"
+							targetmetrics_m_offset="362.00,60.00"
+							easing_curve_type="Circular Out"/>
+					</frames>
+				</show>
+				<hide id="hide">
+					<frames>
+						<frame
+							interpolationtime="300"
+							interpolationpropertymask="2"
+							targetmetrics_m_height="60"
+							targetmetrics_m_width="362"
+							targetmetrics_m_offset="-362.00,-60.00"
+							easing_curve_type="Circular In"/>
+					</frames>
+				</hide>
+			</animations>
+		</menu_bar>
+        <buttongroup
+			this="C3F7F67A-CA89-CB12-E08EDCDA8AA989BE"
+			id="buttongroup"
+			allowverticalresize="false"
+			priority="60"
+			tooltipslocalised="true"
+			uniqueguid="C3F7F67A-CA89-CB12-E08EDCDA8AA989BE"
+			currentstate="EBD7A13E-8197-A0D8-7A1EFD4E55E03468">
+			<userproperties>
+				<property
+					name="Tab Spacing"
+					value="0"/>
+			</userproperties>
+			<componentimages>
+				<component_image
+					this="0B08CE43-B00B-EBB0-7F80438CE9B9F082"
+					uniqueguid="0B08CE43-B00B-EBB0-7F80438CE9B9F082"
+					imagepath="ui/skins/default/bar_top_left.png"/>
+				<component_image
+					this="1F9D07CE-D0E2-A603-6FE040B93F592102"
+					uniqueguid="1F9D07CE-D0E2-A603-6FE040B93F592102"
+					imagepath="ui/skins/default/bar_top_left_corner.png"/>
+			</componentimages>
+			<states>
+				<newstate
+					this="EBD7A13E-8197-A0D8-7A1EFD4E55E03468"
+					name="NewState"
+					width="246"
+					height="38"
+					uniqueguid="EBD7A13E-8197-A0D8-7A1EFD4E55E03468">
+					<imagemetrics>
+						<image
+							this="7B2C9621-4863-35AB-BD76B1C125593935"
+							uniqueguid="7B2C9621-4863-35AB-BD76B1C125593935"
+							componentimage="0B08CE43-B00B-EBB0-7F80438CE9B9F082"
+							width="246"
+							height="46"/>
+						<image
+							this="EF915BC5-CDBF-A98B-EA76E3E9F3EBF1B1"
+							uniqueguid="EF915BC5-CDBF-A98B-EA76E3E9F3EBF1B1"
+							componentimage="1F9D07CE-D0E2-A603-6FE040B93F592102"
+							offset="220.00,0.00"
+							width="139"
+							height="52"
+							dockpoint="Center Right External"
+							dock_offset="-26.00,7.00"
+							canresizeheight="false"
+							canresizewidth="false"/>
+					</imagemetrics>
+					<component_text
+						font_m_size="12"
+						font_m_colour="#FFF8D7FF"
+						font_m_leading="3"
+						fontcat_name="fe_text"/>
+				</newstate>
+			</states>
+			<LayoutEngine
+				type="HorizontalList"
+				sizetocontent="true"
+				secondary_margins="2.00,0.00"
+				margins="18.00,0.00"/>
+		</buttongroup>
+	</components>
+</layout>

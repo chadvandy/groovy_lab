@@ -144,9 +144,10 @@ function GLab.init()
 end
 
 --- Create a new Class object, which can be used to simulate OOP systems.
+---@generic T : Class
 ---@param key string The name of the Class object.
----@param params table? An optional table of defaults to assign to the Class and every Instance of it.
----@return Class
+---@param params T #An optional table of defaults to assign to the Class and every Instance of it.
+---@return T
 function GLab.NewClass(key, params)
     if not params then params = {} end
     return new_class(key, params)
@@ -271,12 +272,13 @@ end
 ---@param fail_func fun(filename:string, err:string)? Code to run if a module fails.
 function GLab.LoadModules(path, search_override, func_for_each, fail_func)
     if not search_override then search_override = "*.lua" end
-    -- vlogf("Checking %s for all main.lua files!", path)
+    vlogf("Checking %s for all %s files!", path, search_override)
 
     local file_str = common.filesystem_lookup(path, search_override)
-    -- vlogf("Checking all module folders for main.lua, found: %s", file_str)
+    vlogf("\tFound: %s", file_str)
     
     for filename in string.gmatch(file_str, '([^,]+)') do
+        vlogf("\tLoading module %s", filename)
         local filename_for_out = filename
 
         local pointer = 1

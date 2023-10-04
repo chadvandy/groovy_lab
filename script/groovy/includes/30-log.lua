@@ -51,10 +51,11 @@ local function deep_copy(t, dest, aType)
 end
 
 --- Create a new subclass from an existing class.
+---@generic T : Class
 ---@param super Class
 ---@param className string
----@param extra_params table
----@return Class
+---@param extra_params T
+---@return T
 local function extend(super, className, extra_params)
 	assert_call_from_class(super, 'extend(...)')
 
@@ -63,7 +64,7 @@ local function extend(super, className, extra_params)
 	_classes[heir] = tostring(heir)
 	super.__subclasses[heir] = true
 	deep_copy(extra_params, deep_copy(super, heir))
-	heir.className    = extra_params and extra_params.className or className
+	heir.className = className
 	heir.__index = heir
 
 	---@type Class
@@ -152,7 +153,7 @@ end
 function default_class:instanceOf(fromclass)
 	assert_call_from_instance(self, 'instanceOf(class)')
 	assert(isClass(fromclass), 'Wrong argument given to method "instanceOf()". Expected a class.')
-	return (self.class and (self.class == fromclass) or (self.class:subclassOf(fromclass)))
+	return (self.class and (self.class == fromclass or self.class:subclassOf(fromclass)))
 end
 
 function default_class:classOf(subclass)
