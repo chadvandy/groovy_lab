@@ -29,7 +29,6 @@ DevTools.Console = GLab.LoadModule("console", this_path)
 function DevTools:create()
 	self._button = GLab.UI:CreateTopBarButton("button_devtools", "ui/skins/default/icon_tech.png", "Lua Console")
 
-
     core:add_listener(
         "button_devtools_on_clicked",
         "ComponentLClickUp",
@@ -56,15 +55,22 @@ function DevTools:create()
 	self.Console:FirstFill(find_uicomponent(self._frame, "tab_lua"))
 	self.Inspector:FirstFill(find_uicomponent(self._frame, "tab_inspector"))
 
-	if __game_mode ~= __lib_type_campaign then
-		local b = find_uicomponent(self._frame, "holder", "tab_button_inspector")
-		b:SetState("inactive")
-		b:SetTooltipText("Inspector is only available in Campaign!", true)
+	self:apply_tab("lua")
 
-		find_uicomponent(self._frame, "tab_inspector"):SetVisible(false)
+	find_uicomponent(self._frame, "tab_inspector"):SetVisible(false)
+	find_uicomponent(self._frame, "holder", "tab_button_inspector"):SetVisible(false)
 
-		self:apply_tab("lua")
-	end
+	find_uicomponent(self._frame, "holder", "tab_button_lua", "tx"):SetTooltipText("", true)
+
+	-- if __game_mode ~= __lib_type_campaign then
+	-- 	local b = find_uicomponent(self._frame, "holder", "tab_button_inspector")
+	-- 	b:SetState("inactive")
+	-- 	b:SetTooltipText("Inspector is only available in Campaign!", true)
+
+	-- 	find_uicomponent(self._frame, "tab_inspector"):SetVisible(false)
+
+	-- 	self:apply_tab("lua")
+	-- end
 
 	self:init_listeners()
 end
